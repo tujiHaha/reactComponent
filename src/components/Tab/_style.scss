@@ -1,0 +1,30 @@
+.tab-wrap {
+  box-shadow: 0 1px 10px #eee;
+  .tab-link-bar {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+    .tab-link-item {
+      padding: 10px 15px;
+      position: relative;
+      cursor: pointer;
+      &.active{
+        color:$primary;
+        &::after{
+
+          content:'';
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 2px;
+          background-color: $primary;
+        }
+      }
+    }
+  }
+  .tab-content-panel {
+    padding: 10px;
+  }
+}

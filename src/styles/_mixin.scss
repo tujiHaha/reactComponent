@@ -1,0 +1,109 @@
+@mixin button-size($padding-y, $padding-x, $font-size, $border-radius) {
+  padding: $padding-y $padding-x;
+  font-size: $font-size;
+  border-radius: $border-radius;
+}
+@mixin button-style(
+  $background,
+  $border,
+  $color,
+  $hover-background: ligthen($background, 7.5%),
+  $hover-border: ligthen($border, 10%),
+  $hover-color: $color
+) {
+  color: $color;
+  background-color: $background;
+  border-color: $border;
+  &:hover {
+    color: $hover-color;
+    background-color: $hover-background;
+    border-color: $hover-border;
+  }
+  &:focus,
+  &.focus {
+    color: $hover-color;
+    background-color: $hover-background;
+    border-color: $hover-border;
+  }
+  &:disabled,
+  &.disabled {
+    color: $color;
+    background-color: $background;
+    border-color: $border;
+  }
+}
+
+@mixin alert-panel($bgclor: $gray-400, $color: $gray-900) {
+  padding: 10px;
+  background-color: $bgclor;
+  border-radius: 4px;
+  .close {
+    background-color: darken($bgclor, 12%);
+    color: $color;
+    position: absolute;
+    right: 15px;
+    top: 17px;
+    font-size: $btn-font-size-sm;
+    border-radius: 4px;
+    padding: 4px 6px;
+    transition: $alert-transiton;
+    &:hover {
+      background-color: darken($bgclor, 18%);
+      cursor: pointer;
+    }
+  }
+  .title {
+    font-size: $btn-font-size;
+    line-height: $btn-line-height;
+    color: $color;
+  }
+  .content {
+    font-size: $btn-font-size;
+    line-height: $btn-line-height;
+    color: $color;
+  }
+}
+
+@mixin menu-item-h() {
+  padding: $menu-item-padding-y $menu-item-padding-x;
+  cursor: pointer;
+  transition: $menu-transition;
+  border-bottom: $menu-item-active-border-width solid transparent;
+  &:focus,
+  &:hover {
+    text-decoration: none;
+  }
+  &.is-disabled {
+    color: $menu-item-disabled-color;
+    pointer-events: none;
+    cursor: default;
+  }
+  &.is-active,
+  &:hover {
+    color: $menu-item-active-color;
+    border-bottom: $menu-item-active-border-width solid $menu-item-active-color;
+  }
+}
+
+
+@mixin menu-item-v() {
+  padding: $menu-item-padding-y $menu-item-padding-x;
+  cursor: pointer;
+  transition: $menu-transition;
+  border-left: $menu-item-active-border-width solid transparent;
+  &:focus,
+  &:hover {
+    text-decoration: none;
+  }
+  &.is-disabled {
+    color: $menu-item-disabled-color;
+    pointer-events: none;
+    cursor: default;
+  }
+  &.is-active,
+  &:hover {
+    color: $menu-item-active-color;
+    border-left: $menu-item-active-border-width solid $menu-item-active-color;
+  }
+}
+

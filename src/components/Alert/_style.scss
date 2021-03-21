@@ -1,0 +1,32 @@
+.alert-wrap {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 300px;
+  transform: translate(-50%, -50%);
+  background-color: $white;
+  padding: 10px;
+  box-shadow: $alert-box-shadow;
+  &.alert-default {
+    .alert-content {
+      @include alert-panel($gray-400);
+    }
+  }
+
+  &.alert-success {
+    .alert-content {
+      @include alert-panel($teal, $white);
+    }
+  }
+
+  &.alert-warning {
+    .alert-content {
+      @include alert-panel($orange, $white);
+    }
+  }
+  &.alert-danger {
+    .alert-content {
+      @include alert-panel($red, $white);
+    }
+  }
+}
